@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+  user-select: none;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Prompt';
+  color: rgb(35, 19, 46);
+}
+
+.navBtn.active{
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.userBtn.active{
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.navBtn.active .NavPanel{
+  border: 1px solid red;
+}
+

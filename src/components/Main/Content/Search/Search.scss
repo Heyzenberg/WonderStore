@@ -1,0 +1,39 @@
+.Search{
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(166, 148, 211, 0.1));
+    p{
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    .inputBox{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div{
+            position: relative;
+            input{
+                margin-right: 10px;
+                padding: 4px 25px 4px 10px;
+                outline: none;
+                border: 1px solid rgba(175, 146, 255, 0.7);
+                border-radius: 5px;
+                background: linear-gradient(-45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6));
+            }
+            .clear{
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: rgb(255, 0, 255);
+                cursor: pointer;
+            }
+        }
+        i{
+            color: rgb(33, 21, 56);
+        }
+    }
+}

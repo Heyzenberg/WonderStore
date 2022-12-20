@@ -1,0 +1,26 @@
+.Product{
+    position: relative;
+    width: 85%;
+    height: 400px;
+    background: linear-gradient(20deg, rgba(255, 255, 255, 0.1), white, white);
+    border-radius: 10px;
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: perspective(600px) rotateY(10deg) rotateX(10deg);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.178);
+    transition: 0.4s;
+    overflow: hidden;
+    &:hover{
+        box-shadow: 0 0 4px 2px rgba(72, 40, 99, 0.78);
+        transform: perspective(600px) rotateY(0)  rotateX(0);
+        .descriptionField{
+            height: 25%;
+            .description{
+                visibility: visible;
+            }
+        }
+    }
+}

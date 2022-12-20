@@ -1,0 +1,54 @@
+.Header{
+    // width: 100%;
+    height: 10%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    h1{
+        font-family: 'Paytone One';
+        font-size: 2.4rem;
+        color: rgb(135, 108, 209);
+        text-shadow: 5px 2px 5px rgb(175, 139, 105);
+        span{
+            color: rgb(109, 138, 199);
+        }
+    }
+    .navBtn{
+        padding: 15px;
+        visibility: hidden;
+    }
+    .cartOpen{
+        text-decoration: none;
+        padding: 15px;
+        background: rgb(101, 48, 117);
+        border-radius: 10px;
+        color: rgb(107, 118, 179);
+        font-weight: 700;
+        transition: 0.2s;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1rem;
+        &.active{
+            display: none;
+        }
+    }
+    .cartClose{
+        text-decoration: none;
+        padding: 15px;
+        background: rgb(101, 48, 117);
+        border-radius: 10px;
+        color: rgb(107, 118, 179);
+        font-weight: 700;
+        transition: 0.2s;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1rem;
+        &.active{
+            display: none;
+        }
+    }
+}
