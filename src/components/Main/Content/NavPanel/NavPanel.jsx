@@ -1,19 +1,21 @@
 import './NavPanel.scss';
 import { useState } from 'react';
 
-const NavPanel = () => {
+const NavPanel = ({filterIndex, setFilterIndex, sortIndex, setSortIndex}) => {
 
     const filterData = ['All', 'Game consoles', 'Smartphones', 'TV', 'Notebooks'];
-    const sortData = ['Name', 'Price up', 'Price down', 'Popularity'];
+    const sortData = [
+                        {localName: 'Name', globalName: 'name'},
+                        {localName: 'Price up', globalName: 'price'},
+                        {localName: 'Price down', globalName: 'price'},
+                        {localName: 'Popularity', globalName: 'rating'}
+                    ];
 
     const [showDeviceFilter, setShowDeviceFilter] = useState(false);
     const [showSort, setShowSort] = useState(false);
     const toggle = (setFilter, filter) => {
         setFilter(!filter)
     };
-
-    const [filterIndex, setFilterIndex] = useState(0);
-    const [sortIndex, setSortIndex] = useState(0);
 
     return(
         <div className="NavPanel">
@@ -24,7 +26,7 @@ const NavPanel = () => {
 
             <button  onClick={() => toggle(setShowSort, showSort)}>Sort</button>
             <div className={showSort ? "sortWindow show" : "sortWindow"}>
-                {sortData.map((item, index) => <span key={index} className={sortIndex === index ? 'active' : ''} onClick={() => setSortIndex(index)}>{item}</span>)}
+                {sortData.map((item, index) => <span key={index} className={sortIndex.localName === item.localName ? 'active' : ''} onClick={() => setSortIndex(item)}>{item.localName}</span>)}
             </div>
         </div>
     )

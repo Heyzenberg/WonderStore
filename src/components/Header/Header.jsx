@@ -7,7 +7,6 @@ import { useState } from 'react';
 const Header = () => {
 
     const [ cartOpen, setCartOpen ] = useState(false);
-    console.log(cartOpen);
 
     return(
         <div className="Header">

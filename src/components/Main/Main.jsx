@@ -6,7 +6,7 @@ import { ProductPage } from './ProductPage/ProductPage';
 import { useState } from 'react';
 import { NotFound } from './NotFound/NotFound';
 
-const Main = ({products, showCartWindow, loading}) => {
+const Main = ({products, loading, filterIndex, setFilterIndex, sortIndex, setSortIndex}) => {
 
   const [indexProduct, setIndexProduct] = useState('');
   const [getBack, setGetBack] = useState('');
@@ -17,7 +17,12 @@ const Main = ({products, showCartWindow, loading}) => {
         <Route path='/' element={<Content products={products}
                                           setIndexProduct={setIndexProduct}
                                           setGetBack={setGetBack}
-                                          loading={loading} />} />
+                                          loading={loading}
+                                          filterIndex={filterIndex}
+                                          setFilterIndex={setFilterIndex}
+                                          sortIndex={sortIndex}
+                                          setSortIndex={setSortIndex} />}
+ />
         <Route path={'product_page/' + indexProduct} element={products.map((item, index) => index === indexProduct
                                                                                     && 
                                                                                 <ProductPage key={item.id}
