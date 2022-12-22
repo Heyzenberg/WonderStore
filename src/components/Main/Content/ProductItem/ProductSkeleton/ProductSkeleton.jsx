@@ -1,10 +1,10 @@
-import React from "react"
+import './ProductSkeleton.scss';
 import ContentLoader from "react-content-loader"
 
 const ProductSkeleton = () => (
-    <div className="ProductItem">
+    <div className="ProductSkeleton">
         <ContentLoader 
-            speed={2}
+            speed={1}
             width={360}
             height={416}
             viewBox="0 0 360 416"

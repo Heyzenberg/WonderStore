@@ -11,19 +11,22 @@ const ProductItem = ({id, name, image, description, price, setIndexProduct, setG
     }
 
     return(
-        <Link to={'product_page/' + id} className="ProductItem" onClick={() => syncBack(id, name)}>
-            <div className="imgField">
-                <img src={image} alt="product" />
-            </div>
-            <div className="titleField">
-                <p className="name">{name}</p>
-            </div>
-            <div className="descriptionField">
-                <p className='description'>{description}</p>
-            </div>
-            <p className="price">${price}</p>
+        <div className="ProductItem">
+            <Link to={'product_page/' + id} className="ProductItemBox" onClick={() => syncBack(id, name)}>
+                <div className="imgField">
+                    <img src={image} alt="product" />
+                </div>
+                <div className="titleField">
+                    <p className="name">{name}</p>
+                </div>
+                <div className="descriptionField">
+                    <p className='description'>{description}</p>
+                </div>
+                <p className="price">${price}</p>
+            </Link>
             <button className='addToCart'><BsFillCartPlusFill /></button>
-        </Link>
+        </div>
+
     )
 }
 

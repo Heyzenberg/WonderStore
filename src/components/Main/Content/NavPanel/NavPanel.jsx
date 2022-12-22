@@ -5,10 +5,10 @@ const NavPanel = ({filterIndex, setFilterIndex, sortIndex, setSortIndex}) => {
 
     const filterData = ['All', 'Game consoles', 'Smartphones', 'TV', 'Notebooks'];
     const sortData = [
+                        {localName: 'Popularity', globalName: '-rating'},
                         {localName: 'Name', globalName: 'name'},
                         {localName: 'Price up', globalName: 'price'},
-                        {localName: 'Price down', globalName: 'price'},
-                        {localName: 'Popularity', globalName: 'rating'}
+                        {localName: 'Price down', globalName: '-price'},
                     ];
 
     const [showDeviceFilter, setShowDeviceFilter] = useState(false);

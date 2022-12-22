@@ -11,22 +11,23 @@ const App = () => {
   const [ loading, setLoading ] = React.useState(true);
 
   const [filterIndex, setFilterIndex] = React.useState(0);
-  const [sortIndex, setSortIndex] = React.useState({localName: 'Name', globalName: 'name'});
+  const [sortIndex, setSortIndex] = React.useState({localName: 'Popularity', globalName: '-rating'});
+
+  const categories = filterIndex > 0 ? "categoryId=" + filterIndex : '';
+  const sortBy = sortIndex.globalName.replace('-', '');
+  const sortReverse = sortIndex.globalName.includes('-') ? 'desc' : 'asc';
 
   const [ products, setProducts ] = React.useState([])
   React.useEffect(() => {
     setLoading(true)
-      fetch(`https://639ddeeb3542a2613051d263.mockapi.io/products?${
-        filterIndex > 0 ? "categoryId=" + filterIndex : ''
-      }&sortBy=${sortIndex.globalName}&order=asc`).then((prod) => {
+      fetch(`https://639ddeeb3542a2613051d263.mockapi.io/products?${categories }&sortBy=${sortBy}&order=${sortReverse}`)
+      .then((prod) => {
         return prod.json();
       }).then((json) => {
         setProducts(json)
         setLoading(false)
       })
   }, [filterIndex, sortIndex])
-
-  console.log(filterIndex, sortIndex)
 
   return (
     <div className="App">

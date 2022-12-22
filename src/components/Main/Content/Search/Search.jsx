@@ -1,17 +1,22 @@
 import './Search.scss';
-import React from 'react';
 
-const Search = () => {
+const Search = ({setSearchValue, searchValue}) => {
+
+    const trackChanges = (e) => {
+        setSearchValue(e)
+    }
 
     return(
         <div className="Search">
             <p>All products</p>
-            <div className='inputBox'>
-                <div>
-                    <input type="text" />
-                    <i className="fa-solid fa-xmark clear"></i>          
+            <div className='inputContainer'>
+                <div className='inputBox'>
+                    <input type="text" maxLength={45} placeholder='Enter name product...' onChange={(e) => trackChanges(e.target.value)} value={searchValue} />
+                    {searchValue && <i className="fa-solid fa-xmark clear" onClick={() => setSearchValue('')}></i>}         
                 </div>
-                <i className="fa-solid fa-magnifying-glass"></i>
+                <div className="iconBox">
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </div>
             </div>
         </div>
     )
