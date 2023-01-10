@@ -1,9 +1,13 @@
 import './ProductItem.scss';
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import React from 'react';
+import { MainContext } from '../../Main';
 
 
-const ProductItem = ({id, name, image, description, price, setIndexProduct, setGetBack }) => {
+const ProductItem = ({id, name, image, description, price}) => {
+
+    const {setIndexProduct, setGetBack} = React.useContext(MainContext);
 
     const syncBack = (id, name) => {
         setIndexProduct(id)

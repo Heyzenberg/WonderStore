@@ -1,7 +1,7 @@
 .ProductItem{
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 320px;
     transform: perspective(900px) rotateY(10deg) rotateX(10deg);
     transition: 0.4s;
     border-radius: 10px;
@@ -11,8 +11,14 @@
         box-shadow: 0 0 4px 2px rgba(72, 40, 99, 0.78);
         transform: perspective(600px) rotateY(0)  rotateX(0);
         .ProductItemBox{
+            .imgField{
+                height: 60%;
+            }
+            .titleField{
+                height: 20%;
+            }
             .descriptionField{
-                height: 25%;
+                height: 20%;
                 .description{
                     visibility: visible;
                 }
@@ -28,7 +34,7 @@
         justify-content: center;
         .imgField{
             width: 100%;
-            height: 50%;
+            height: 80%;
             transition: 0.4s;
             overflow: hidden;
             background: white;
@@ -41,7 +47,7 @@
         }
         .titleField{
             width: 100%;
-            height: 25%;
+            height: 20%;
             text-align: center;
             display: flex;
             align-items: center;

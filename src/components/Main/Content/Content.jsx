@@ -1,34 +1,29 @@
 import './Content.scss';
-import { useState } from 'react';
 import { NavPanel } from './NavPanel/NavPanel';
 import { ProductItem } from './ProductItem/ProductItem';
 import { Search } from './Search/Search';
 import { ProductSkeleton } from './ProductItem/ProductSkeleton/ProductSkeleton';
+import { useContext } from 'react';
+import { AppContext } from '../../../App';
 
-const Content = ({products, setIndexProduct, setGetBack, loading, filterIndex, setFilterIndex, sortIndex, setSortIndex}) => {
+const Content = () => {
 
-    const [searchValue, setSearchValue] = useState('');
+    const {products, loading, searchValue} = useContext(AppContext);
 
     const skeletons = [...new Array(8)].map((_, index) => <ProductSkeleton key={index} />)
-    const allProducts = products.filter(value => value.name.toLowerCase().includes(searchValue.toLowerCase())).map((item) => <ProductItem key={item.id}
-                                                        id={item.id}
-                                                        name={item.name}
-                                                        image={item.image}
-                                                        description={item.description}
-                                                        price={item.price}
-                                                        setIndexProduct={setIndexProduct}
-                                                        setGetBack={setGetBack} />)
-
+    const allProducts = products.filter(value => value.name.toLowerCase().includes(searchValue.toLowerCase())).map(
+                                        (item) => <ProductItem key={item.id}
+                                                            id={item.id}
+                                                            name={item.name}
+                                                            image={item.image}
+                                                            description={item.description}
+                                                            price={item.price} />)
 
     return(
         <div className="Content">
-            <NavPanel filterIndex={filterIndex}
-                    setFilterIndex={setFilterIndex}
-                    sortIndex={sortIndex}
-                    setSortIndex={setSortIndex} />
+            <NavPanel />
             <div className="contantWrapper">
-                <Search setSearchValue={setSearchValue}
-                        searchValue={searchValue} />
+                <Search />
                 <div className="wrapper">
                     {loading ? skeletons : allProducts}
                 </div>

@@ -1,6 +1,10 @@
 import './Search.scss';
+import React from 'react';
+import { AppContext } from '../../../../App';
 
-const Search = ({setSearchValue, searchValue}) => {
+const Search = () => {
+
+    const {setSearchValue, searchValue} = React.useContext(AppContext);
 
     const trackChanges = (e) => {
         setSearchValue(e)
